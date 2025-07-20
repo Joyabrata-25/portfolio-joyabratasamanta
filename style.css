@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+  
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #1a3024;
+  color: #333;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+
+section {
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: auto;
+  background-color: #2b4034;
+  color: #fff;
+
+}
+/* Layout for Home Section */
+.home-content {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+  height: 300px;
+  padding: 20px;
+  
+}
+
+.home-image img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover  ;
+  border-radius: 50%;
+  margin-left: 250px;
+ 
+}
+
+.home-text {
+  max-width: 700px;
+  text-align: left;
+  font-size:1rem;
+}
+
+/* Existing animations (keep these if added before) */
+.rotating-text {
+  position: relative;
+  height: 30px;
+  overflow: hidden;
+  font-size: 3rem;
+  margin-top: 10px;
+}
+
+.text-line {
+  position: absolute;
+  width: 150%;
+  opacity: 0;
+  text-align: left;
+  color:rgb(244, 244, 76) ;
+  font-size: 1.2rem;
+  animation: slideInOut 12s infinite;
+}
+
+.text-line:nth-child(1) { animation-delay: 0s; }
+.text-line:nth-child(2) { animation-delay: 3s; }
+.text-line:nth-child(3) { animation-delay: 6s; }
+.text-line:nth-child(4) { animation-delay: 9s; }
+
+@keyframes slideInOut {
+  0%   { opacity: 0; transform: translateX(-100%); }
+  10%  { opacity: 1; transform: translateX(0); }
+  25%  { opacity: 1; transform: translateX(0); }
+  40%  { opacity: 0; transform: translateX(100%); }
+  100% { opacity: 0; transform: translateX(100%); }
+}
+
+
+.highlight {
+  color: #8fb3da;
+}
+.highlight:hover{
+  color: rgb(244, 244, 76);
+    
+}
+#about{
+  font-size: 1.2rem;
+}
+.skill {
+  margin-bottom: 20px;
+}
+
+.skill p {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.progress-bar {
+  background-color: #194e30;
+  border-radius: 25px;
+  overflow: hidden;
+  height: 15px;
+}
+
+.progress {
+  background-color:rgb(245, 224, 107) ;
+  height: 100%;
+  color: #0b0b0b;
+  text-align: right;
+  padding-right: 8px;
+  line-height: 15px;
+  border-radius: 25px;
+  transition: width 1s ease-in-out;
+}
+.progress-bar:hover{
+  background-color: #ddd;
+}
+.progress:hover{
+  background-color: #8fb3da;
+}
+
+.edu-entry {
+  background: rgb(31, 30, 30);
+  color:rgb(245, 224, 107);
+  padding: 20px;
+  margin: 10px 0;
+  border-left: 5px solid #007BFF;
+}
+.edu-entry h3{
+  color: #8fb3da;
+}
+.project {
+  background: rgb(31, 30, 30);
+  color:rgb(244, 244, 76);
+  
+  padding: 20px;
+  margin: 10px 0;
+  border-left: 5px solid #007BFF;
+}
+.project h3{
+  color: #8fb3da;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input, form textarea {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+form button {
+  padding: 10px;
+  background: #007BFF;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+footer {
+  text-align: center;
+  background: #333;
+  color: white;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+
+footer .socials {
+  margin-top: 10px;
+}
+
+footer .socials a {
+  font-size: 24px;
+  margin: 0 10px;
+  color: aquamarine;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+footer .socials a:hover {
+  transform: scale(1.3);
+  color:rgb(244, 244, 76);;
+}
+
+/* cursor */
+
+/* Pen-like cursor */
+.cursor {
+  width: 12px;
+  height: 12px;
+  background: rgb(231, 102, 42); /* Blue ink-like color */
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+  box-shadow: 0 0 4px rgb(244, 244, 76);
+  transform: translate(-50%, -50%);
+}:xr-overlay
+
+
+a:hover ~ .cursor,
+button:hover ~ .cursor {
+  transform: translate(-50%, -50%) scale(1.5);
+  background: #0056b3;
+}
+
