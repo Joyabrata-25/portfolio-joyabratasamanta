@@ -36,7 +36,38 @@ window.addEventListener("scroll", animateSkills);
 
 // window.addEventListener("scroll", animateEducation);
 
+//conect with google sheet
+
+const scriptURL = "https://script.google.com/macros/s/AKfycbxhsZ1gZnHGtyEgkkD7l2LKyzvIiH-7yQ7_ri5Hz40hxMwUWBldv36H0cMSAiWBpa4J/exec"; // Replace this!
+
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = {
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value
+    };
+
+    fetch(scriptURL, {
+      method: "POST",
+      body: JSON.stringify(formData)
+    })
+      .then(response => response.json())
+      .then(result => {
+        document.getElementById("responseMsg").innerText = "Message sent successfully!";
+        form.reset();
+      })
+      .catch(error => {
+        document.getElementById("responseMsg").innerText = "Error sending message!";
+        console.error("Error:", error);
+      });
+  });
+
 // Handle form submission (example)
+
+
 document.getElementById("contactForm").addEventListener("submit", function (e) {
   e.preventDefault();
   alert("Thank you! Your message has been sent.");
