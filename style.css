@@ -42,6 +42,7 @@ nav ul li {
 nav ul li a {
   color: white;
   text-decoration: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 
@@ -222,26 +223,66 @@ section {
   color: #8fb3da;
 }
 
-
-form {
-  display: flex;
-  flex-direction: column;
+/* Container style */
+form#contactForm {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", sans-serif;
 }
 
-form input, form textarea {
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+/* Form input fields */
+form#contactForm input,
+form#contactForm textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: 0.3s ease;
+  background: #f9f9f9;
 }
 
-form button {
-  padding: 10px;
-  background: #007BFF;
-  border: none;
+/* Focus effect */
+form#contactForm input:focus,
+form#contactForm textarea:focus {
+  outline: none;
+  border-color: #0066ff;
+  box-shadow: 0 0 5px rgba(0, 102, 255, 0.3);
+  background: #fff;
+}
+
+/* Submit button */
+form#contactForm button {
+  background-color: #0066ff;
   color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  border-radius: 4px;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+form#contactForm button:hover {
+  background-color: #0052cc;
+}
+
+/* Response message */
+#responseMsg {
+  margin-top: 15px;
+  font-weight: 500;
+  color: green;
+  text-align: center;
+}
+
+/* Error message style */
+#responseMsg.error {
+  color: red;
 }
 
 footer {
