@@ -13,7 +13,6 @@ const navList = document.querySelector('nav ul');
 menuToggle.addEventListener('click', () => {
   navList.classList.toggle('active');
 });
-
 //skill animation
 const skillSection = document.getElementById("skills");
 const skills = document.querySelectorAll(".progress");
