@@ -7,6 +7,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
   });
 });
+const menuToggle = document.getElementById('menu-toggle');
+const navList = document.querySelector('nav ul');
+
+menuToggle.addEventListener('click', () => {
+  navList.classList.toggle('active');
+});
 
 //skill animation
 const skillSection = document.getElementById("skills");
@@ -23,7 +29,18 @@ function animateSkills() {
 }
 
 window.addEventListener("scroll", animateSkills);
+//animation system
+// const educationSection = document.getElementById("education");
 
+// function animateEducation() {
+//   const rect = educationSection.getBoundingClientRect();
+//   if (rect.top < window.innerHeight - 100) {
+//     educationSection.classList.add("show");
+//     window.removeEventListener("scroll", animateEducation); // animate once
+//   }
+// }
+
+// window.addEventListener("scroll", animateEducation);
 
 //conect with google sheet
 
